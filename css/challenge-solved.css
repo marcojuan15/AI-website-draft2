@@ -1,0 +1,121 @@
+.challenge-solved {
+    background-color: #000000;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.challenge-solved-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.challenge-solved-heading .highlight {
+    color: #F62C62;
+}
+
+.challenge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.challenge-item {
+    width: 100%;
+    max-width: 900px;
+    height: 120px;
+    background-image: url('/images/container.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.challenge-item p {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-left: 22%;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 80%;
+}
+
+.challenge-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 1024px) {
+    .challenge-solved {
+        padding: 50px 15px;
+    }
+
+    .challenge-solved-heading {
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+    }
+
+    .challenge-item {
+        height: 100px;
+        max-width: 800px;
+    }
+
+    .challenge-item p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large phone styles */
+@media screen and (max-width: 768px) {
+    .challenge-solved {
+        padding: 40px 10px;
+    }
+
+    .challenge-solved-heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .challenge-item {
+        height: 80px;
+        max-width: 600px;
+    }
+
+    .challenge-item p {
+        font-size: 1.1rem;
+        padding-left: 20%;
+    }
+}
+
+/* Small phone styles */
+@media screen and (max-width: 480px) {
+    .challenge-solved {
+        padding: 30px 10px;
+    }
+
+    .challenge-solved-heading {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .challenge-item {
+        height: 50px;
+        max-width: 390px;
+    }
+
+    .challenge-item p {
+        font-size: 0.7rem;
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,231 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #F0F4EE;
+    background-color: #030405;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.center-partition {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(3, 4, 5, 0.7); 
+}
+
+@keyframes gridGlow {
+    0% { filter: brightness(1) blur(0px); }
+    100% { filter: brightness(1.5) blur(1px); }
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    color: #F62C62;
+}
+
+.tagline {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: -2px;
+    margin-bottom: 2rem;
+    color: #F0F4EE;
+}
+
+.profile-picture {
+    width: auto;
+    height: 330px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.booking-container-hp {
+    margin-top: -1.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    padding: 10px 20px;
+}
+
+#bookCallBtn {
+    background-color: #F62C62;
+    color: #F0F4EE;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(246, 44, 98, 0.4);
+    white-space: nowrap; /* Ensure text stays on one line */
+}
+
+#bookCallBtn:hover {
+    background-color: #F39C12;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.6);
+}
+
+#bookCallBtn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(243, 156, 18, 0.4);
+}
+
+.moving-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.moving-light.visible {
+    opacity: 1;
+}
+
+.moving-light::before,
+.moving-light::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.moving-light::before {
+    background: 
+        linear-gradient(90deg, transparent, transparent, #C41644, transparent, transparent) 0 0/400% 5px no-repeat,
+        linear-gradient(180deg, transparent, transparent, #C41644, transparent, transparent) right 0/5px 400% no-repeat,
+        linear-gradient(270deg, transparent, transparent, #C41644, transparent, transparent) 0 bottom/400% 5px no-repeat,
+        linear-gradient(0deg, transparent, transparent, #C41644, transparent, transparent) left 0/5px 400% no-repeat;
+    animation: moveLight 10s linear infinite;
+}
+
+.moving-light::after {
+    background: 
+        linear-gradient(90deg, transparent, transparent, rgba(196, 22, 68, 0.3), transparent, transparent) 0 0/400% 20px no-repeat,
+        linear-gradient(180deg, transparent, transparent, rgba(196, 22, 68, 0.3), transparent, transparent) right 0/20px 400% no-repeat,
+        linear-gradient(270deg, transparent, transparent, rgba(196, 22, 68, 0.3), transparent, transparent) 0 bottom/400% 20px no-repeat,
+        linear-gradient(0deg, transparent, transparent, rgba(196, 22, 68, 0.3), transparent, transparent) left 0/20px 400% no-repeat;
+    filter: blur(5px);
+    animation: moveLight 10s linear infinite;
+}
+
+@keyframes moveLight {
+    0% {
+        background-position: 100% 0, right 100%, 0 bottom, left 0;
+    }
+    25% {
+        background-position: 0 0, right 0, 100% bottom, left 100%;
+    }
+    50% {
+        background-position: 100% 0, right 100%, 0 bottom, left 0;
+    }
+    75% {
+        background-position: 0 0, right 0, 100% bottom, left 100%;
+    }
+    100% {
+        background-position: 100% 0, right 100%, 0 bottom, left 0;
+    }
+}
+
+/* Tablet and phone styles */
+@media screen and (max-width: 1024px) {
+    .container {
+        height: auto;
+    }
+
+    .center-partition {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+    }
+
+    .profile-picture {
+        height: 250px;
+    }
+
+    #bookCallBtn {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+}
+
+/* Additional adjustments for smaller phones */
+@media screen and (max-width: 768px) {
+    .container {
+        height: 70%;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .profile-picture {
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+
+    #bookCallBtn {
+        font-size: 1.3rem;
+        padding: 12px 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .profile-picture {
+        height: 180px;
+    }
+
+    #bookCallBtn {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}

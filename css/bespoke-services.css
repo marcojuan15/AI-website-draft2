@@ -1,0 +1,322 @@
+.bespoke-services {
+    background-color: #000000;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.bespoke-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #F62C62;
+    margin-bottom: 0;
+}
+
+.bespoke-subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1rem;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 45%;
+    max-width: 500px;
+    position: relative;
+}
+
+.service-header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.service-item.visible .service-header {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.service-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #F62C62;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -20px;
+    flex-shrink: 0;
+    z-index: 2;
+    position: relative;
+    overflow: visible;
+}
+
+.service-logo::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #F62C62;
+    border-top: none;
+    box-shadow: 0 0 10px #F62C62, 0 0 20px #F62C62;
+    animation: glowPulse 2s infinite alternate;
+}
+
+.service-logo img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+.service-title {
+    background-color: #000000;
+    border: 3px solid #F62C62;
+    border-radius: 10px;
+    padding: 10px 20px 10px 80px;
+    text-align: left;
+    flex-grow: 1;
+    height: 80px;
+    display: flex;
+    margin-left: -8%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+.service-title::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    border: 2px solid #F62C62;
+    box-shadow: 0 0 10px #F62C62, 0 0 20px #F62C62;
+    animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px #F62C62, 0 0 10px #F62C62;
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 10px #F62C62, 0 0 20px #F62C62;
+    }
+}
+
+.service-title h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+    color: #F62C62;
+    margin: 0;
+}
+
+.service-title h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.service-content {
+    background: linear-gradient(to bottom, rgba(246, 44, 98, 0.6), #030405);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    margin: 0 5% 0 7%;
+    flex-grow: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 0 15px rgba(246, 44, 98, 0.3);
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.service-item.visible .service-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+    .bespoke-heading {
+        font-size: 2.5rem;
+    }
+
+    .bespoke-subheading {
+        font-size: 1.8rem;
+    }
+
+    .service-item {
+        width: 48%;
+    }
+
+    .service-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .service-logo::after {
+        width: 100px;
+        height: 100px;
+    }
+
+    .service-title {
+        height: 70px;
+        padding: 10px 15px 10px 70px;
+    }
+
+    .service-title h4 {
+        font-size: 1.6rem;
+    }
+
+    .service-title h5 {
+        font-size: 1.1rem;
+    }
+
+    .service-content {
+        padding: 30px;
+    }
+
+    .service-content p {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+
+    .bespoke-heading {
+        font-size: 2.2rem;
+    }
+
+    .bespoke-subheading {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .service-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .service-logo::after {
+        width: 80px;
+        height: 80px;
+    }
+
+    .service-title {
+        height: 60px;
+        padding: 10px 15px 10px 60px;
+    }
+
+    .service-title h4 {
+        font-size: 1.4rem;
+    }
+
+    .service-title h5 {
+        font-size: 1rem;
+    }
+
+    .service-content {
+        padding: 25px;
+        margin: 0 2% 0 4%;
+        min-height: 160px;
+    }
+
+    .service-content p {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+}
+
+/* Small phone styles */
+@media screen and (max-width: 480px) {
+    .bespoke-services {
+        padding: 40px 15px;
+    }
+
+    .bespoke-heading {
+        font-size: 1.6rem;
+    }
+
+    .bespoke-subheading {
+        font-size: 1.1rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .service-item {
+        width: 100%;
+        max-width: none;
+    }
+
+    .service-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-logo::after {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-title {
+        height: 45px;
+        padding: 8px 12px 8px 70px;
+    }
+
+    .service-title h4 {
+        font-size: 1.3rem;
+    }
+
+    .service-title h5 {
+        font-size: 0.95rem;
+    }
+
+    .service-content {
+        padding: 30px;
+        min-height: 120px;
+    }
+
+    .service-content p {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+}

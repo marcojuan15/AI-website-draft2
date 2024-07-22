@@ -1,0 +1,167 @@
+.ai-system-section {
+    background-image: url('/images/ai-sys-BG.png');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.border {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #F62C62 10%,
+        #F62C62 90%,
+        transparent
+    );
+    z-index: 2;
+}
+
+.border.top {
+    top: 0;
+}
+
+.border.bottom {
+    bottom: 0;
+}
+
+.ai-system-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.ai-system-box {
+    width: 220px;
+    height: 270px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    transition: transform 1s ease;
+}
+
+.ai-system-box:hover {
+    transform: scale(1.05);
+}
+
+.ai-system-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.ai-system-title {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.ai-system-more {
+    color: #F62C62;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -2%;
+    margin-bottom: 15px;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+    .ai-system-section {
+        padding: 25px 15px;
+    }
+
+    .ai-system-container {
+        max-width: 900px;
+    }
+
+    .ai-system-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ai-system-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 12px;
+    }
+
+    .ai-system-title {
+        font-size: 1.2rem;
+    }
+
+    .ai-system-more {
+        font-size: 2rem;
+    }
+}
+
+/* Phone styles */
+@media screen and (max-width: 768px) {
+    .ai-system-section {
+        padding: 20px 20px;
+    }
+
+    .ai-system-container {
+        max-width: 100%;
+    }
+
+    .ai-system-box {
+        width: 22%;
+        height: auto;
+        margin: 0 1%;
+    }
+
+    .ai-system-logo {
+        width: 70%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .ai-system-title {
+        font-size: 0.9rem;
+    }
+
+    .ai-system-more {
+        font-size: 1.6rem;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Small phone styles */
+@media screen and (max-width: 480px) {
+    .ai-system-box {
+        width: 23%;
+        margin: 0 1%;
+    }
+
+    .ai-system-section {
+        padding: 30px 20px 20px 20px;
+    }
+
+    .ai-system-logo {
+        width: 65%;
+    }
+
+    .ai-system-title {
+        font-size: 0.55rem;
+    }
+
+    .ai-system-more {
+        font-size: 1.4rem;
+    }
+}
